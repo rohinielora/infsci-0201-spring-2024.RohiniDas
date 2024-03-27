@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Poems List</h1>
+<ul>
+    {% for poem in poems %}
+    <li><a href="{{ url_for('poem', poem_id=poem.id) }}">{{ poem.title }}</a> by {{ poem.author }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
